@@ -7,13 +7,18 @@ $Color-5: #0d0d0d;
 
 body {
   background-color: #4158d0;
+  background-repeat: no-repeat;
   background-image: linear-gradient(
     43deg,
     #4158d0 0%,
     #c850c0 46%,
     #ffcc70 100%
   );
+  overflow-x: hidden;
 }
 footer  {
   background-color: #f2ddd0;
+}
+#devs {
+  width: fit-content;
 }
