@@ -15,7 +15,7 @@ Os arquivos estão organizados em pastas:
 * `img` guarda as imagens do projeto;
 * `styles` guarda as folhas de estilo, arquivos `.scss`;
 
-## Istruções para Usar Arquivos `.scss`
+## Instruções para Usar Arquivos `.scss`
 
 Para fazer alterações nos arquivos <.scss> é necessário instalar a extensão **_Live SASS Compiler_**:
 
