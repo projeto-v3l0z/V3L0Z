@@ -1,5 +1,5 @@
 # Página Institucional - V3L0Z
-[Veja o site clicando aqui!](http://v3l0z.com.br)
+[Veja o site clicando aqui!](https://kevin-sarges.github.io/landing-page-veloz/)
 
 ## Sobre o site
 
