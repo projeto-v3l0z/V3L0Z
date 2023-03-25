@@ -10,14 +10,17 @@ Desenvolvido em `HTML`, `CSS` e `JavaScript`, também utilizando o framework `Bo
 ## Organização do Projeto
 
 Os arquivos estão organizados em pastas:
-* `src` é a pasta raiz do código-fonte do projeto;
-* `public` contém arquivos estáticos, como imagens, folhas de estilo e arquivos JavaScript;
-* `img` guarda as imagens do projeto;
-* `styles` guarda as folhas de estilo, arquivos `.scss`;
+* `/src` é a pasta raiz do código-fonte do projeto;
+* `/public` contém arquivos estáticos, como imagens, folhas de estilo e arquivos JavaScript;
+* `/audios` guarda os arquivos de áudio;
+* `/img` guarda as imagens do projeto;
+* `/scripts` guarda os arquivos `.js`;
+* `/styles` guarda as folhas de estilo;
+* `/videos` guarda os arquivos de vídeo;
 
 ## Instruções para Usar Arquivos `.scss`
 
-Para fazer alterações nos arquivos <.scss> é necessário instalar a extensão **_Live SASS Compiler_**:
+Para fazer alterações nos arquivos `.scss` é necessário instalar a extensão **_Live SASS Compiler_**:
 
 ![image](https://user-images.githubusercontent.com/108436724/220643111-77193a5b-71c1-438f-9c4b-a05c8b241f1a.png)
 
@@ -29,7 +32,7 @@ Pronto! Agora basta clicar em _"Watch Sass"_, na barra inferior do _VS Code_:
 
 ![image](https://user-images.githubusercontent.com/108436724/220658040-590f2470-5523-45d9-b74a-7d05494f7794.png)
 
-Agora a mensagem deve ser: _"Watching..."_. A partir daqui, todas as alterações nos arquivos `.scss` serão compiladas em um arquivo `.css` na pasta `CSS`, na pasta das folhas de estilo.
+Agora a mensagem deve ser: _"Watching..."_. A partir daqui, todas as alterações nos arquivos `.scss` serão compiladas em um arquivo `.css` na pasta `/CSS`, na pasta das folhas de estilo.
 
 ## Devs:
 * Kevin Sarges
@@ -47,7 +50,7 @@ Agora a mensagem deve ser: _"Watching..."_. A partir daqui, todas as alteraçõe
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/fagnerpsantos)](https://github.com/leon-rdo)
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fagnerpsantos/)](https://www.linkedin.com/in/leonrdo-costa)
 
-Com a supervisão de Fabrício Araújo.
+Com a supervisão de Fabrício Araújo:
 
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/fagnerpsantos)](https://github.com/fabriciopa)
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fagnerpsantos/)](https://www.linkedin.com/in/araujopa)
