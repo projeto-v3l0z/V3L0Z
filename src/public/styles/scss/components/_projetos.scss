@@ -1,0 +1,26 @@
+.carousel-item {
+  img {
+    aspect-ratio: 16/9;
+    object-fit: fill;
+  }
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 90%;
+}
+
+.list-group-item {
+  background-color: $transparent;
+  color: white;
+  a {
+    color: white;
+    img:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+.list-group-item.active {
+  background-color: $orange;
+  border: $orange;
+}

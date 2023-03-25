@@ -1,0 +1,16 @@
+[data-animation] {
+  opacity: 0;
+  transition: 0.7s;
+}
+[data-animation="fade-up"] {
+  transform: translate3d(0, 50px, 0);
+}
+
+[data-animation="flip"] {
+  transform: rotateY(180deg);
+}
+
+[data-animation].animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
