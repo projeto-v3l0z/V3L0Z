@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
+  <head>
     <!-- Título -->
     <title>V3L0Z</title>
 
@@ -13,26 +13,44 @@
 
     <!-- Meta Tags -->
     <meta charset="utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="content-language" content="pt-br" />
+
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Página oficial da academia V3L0Z" />
+    <meta name="theme-color" content="#f26444" />
+
     <meta
-      property="og:url"
-      content="https://kevin-sarges.github.io/landing-page-veloz"
+      name="keywords"
+      content="Ser Educacional, UNAMA, Uninassau, Devs, Desenvolvedores, V3L0Z, Veloz, estágio, TI, landing-page, academia, projeto, ZooUnama, foguete, Bolsas de estágio, Seleção de alunos, Experiência profissional, Academia de desenvolvedores, Desenvolvimento de software, Tecnologia da informação, Carreira de TI, Oportunidades de estágio, Programa de estágio, Edital de seleção, Ensino superior, Aprendizado prático, Mercado de trabalho em TI, Desenvolvimento web, Programação, Linguagens de programação, Projetos de software, Inovação, Tecnologia educacional, Empreendedorismo, Gestão de projetos, Qualificação profissional, Capacitação técnica, Mentoria, Networking, Soft skills, Hard skills, Educação a distância, Plataforma de ensino virtual, Certificação técnica, Estudantes de tecnologia, Trabalho remoto em TI, Cultura da inovação, Colaboração, Habilidades digitais, Transformação digital"
     />
+    <meta name="generator" content="Bootstrap 5.3" />
+    <meta name="rating" content="general" />
+    <meta name="robots" content="follow" />
+    <meta
+      name="author"
+      content="Kevin Sarges, Leonardo Costa e Matheus Macias"
+    />
+    <meta name="description" content="Página oficial da academia V3L0Z" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ACADEMIA V3L0Z" />
-    <meta name="theme-color" content="#f26444" />
     <meta
       property="og:description"
       content="Página oficial da academia V3L0Z"
     />
     <meta
       property="og:image"
-      content="./src/public/img/V3L0Z (Orange-White).svg"
+      content="./src/public/img/V3L0Z - Brand (Orange-White).png"
     />
+    <meta
+      property="og:url"
+      content="https://kevin-sarges.github.io/landing-page-veloz"
+    />
+
+    <meta name="copyright" content="© 2023 Ser Educacional" />
 
     <!-- Stylesheets -->
     <link
@@ -54,8 +72,9 @@
     <script src="./src/public/scripts/rocket-to-top.js" defer></script>
     <script src="./src/public/scripts/scroll-animation.js" defer></script>
     <script src="./src/public/scripts/slidespy.js" defer></script>
+    <script src="./src/public/scripts/academia-border.js"></script>
   </head>
-  <body>
+  <body onload="animateBorder()">
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
         <div class="container-fluid mx-4 w-100">
@@ -80,7 +99,7 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <img src="./src/public/img/menu.svg" width="30px" alt="icons" />
+            <img src="./src/public/img/menu.svg" width="30px" alt="Ícones" />
           </button>
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
@@ -112,20 +131,22 @@
         <section id="academia">
           <div class="row justify-content-evenly align-items-center g-1">
             <div
-              class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4"
+              class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-5"
             >
               <img
                 class="img-fluid w-75"
                 src="./src/public/img/V3L0Z - Brand (Orange-White).svg"
-                alt="Logotipo da V3L0Z"
+                alt="Logotipo da V3L0Z (VELOZ)"
                 loading="lazy"
               />
             </div>
             <div
-              class="col-12 col-md-6 academia justify-content-center align-items-center"
+              class="col-12 col-lg-6 academia justify-content-center align-items-center"
             >
               <div class="w-100 fs-5">
-                <h1 class="display-2">Academia V3L0Z</h1>
+                <h1 class="display-2 text-center text-lg-start">
+                  Academia V3L0Z
+                </h1>
                 <p>
                   A V3L0Z é a academia Dev do grupo SER que tem como objetivo
                   oferecer experiência profissional para o aluno. Para isso,
@@ -142,13 +163,13 @@
         </section>
         <section id="projetos">
           <div
-            class="row d-sm-flex flex-column-reverse flex-md-row justify-content-evenly align-items-center g-4"
+            class="row d-sm-flex flex-md-row justify-content-evenly align-items-center g-4"
           >
             <div
-              class="col-12 col-md-6 fs-5 projetos justify-content-center align-items-center"
+              class="col-12 col-lg-6 fs-5 projetos justify-content-center align-items-center"
             >
-              <div class="fs-5 projetos"  data-animation="fade-up">
-                <h1 class="display-2">PROJETOS</h1>
+              <div class="fs-5 projetos" data-animation="fade-up">
+                <h1 class="display-2 text-center text-lg-start">PROJETOS</h1>
                 <p>
                   A V3L0Z é responsável por desenvolver sistemas na área
                   acadêmica cujo o cliente é o grupo Ser Educacional ou
@@ -174,18 +195,20 @@
                       href="https://play.google.com/store/apps/details?id=com.bem_familia&pli=1"
                       ><img
                         src="./src/public/icons/google-play.svg"
-                        alt="" /></a
+                        alt="Ícone da Google Play Store." /></a
                     ><a
                       class="me-2"
                       href="https://play.google.com/store/apps/details?id=com.bem_familia&pli=1"
-                      ><img src="./src/public/icons/apple.svg" alt=""
+                      ><img
+                        src="./src/public/icons/apple.svg"
+                        alt="Ícone da App Store da Apple."
                     /></a>
                   </li>
                 </ul>
               </div>
             </div>
             <div
-              class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4"
+              class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-4"
               data-animation="flip"
             >
               <div
@@ -266,9 +289,11 @@
           </div>
         </section>
         <section id="funcionamento">
-          <div class="row d-flex justify-content-center align-items-center">
+          <div
+            class="row d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center"
+          >
             <div
-              class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4"
+              class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-4"
             >
               <div class="video-container">
                 <video
@@ -284,10 +309,12 @@
               </div>
             </div>
             <div
-              class="col-12 col-md-6 fs-5 academia justify-content-center align-items-center"
+              class="col-12 col-lg-6 fs-5 academia justify-content-center align-items-center"
             >
               <div class="fs-5 funcionamento" data-animation="fade-up">
-                <h1 class="display-2">Como funciona?</h1>
+                <h1 class="display-2 text-center text-lg-start">
+                  Como funciona?
+                </h1>
                 <p>
                   O ingresso na V3L0Z é por meio de edital de seleção a cada 6
                   meses. Os alunos selecionados são contratados como estagiários
@@ -299,14 +326,23 @@
                   A V3L0Z está dividida em três hubs e funciona nas unidades:
                 </p>
                 <ul class="list-group mb-3 fs-6">
-                  <li class="list-group-item">
-                    Centro Universitário Maurício de Nassau - Recife
+                  <li class="list-group-item" data-animation="fade-up">
+                    <a
+                      href="https://www.uninassau.edu.br/estrutura-fisica/recife"
+                      >Centro Universitário Maurício de Nassau - Recife</a
+                    >
                   </li>
-                  <li class="list-group-item">
-                    Centro Universitário Maurício de Nassau - Aracajú
+                  <li class="list-group-item" data-animation="fade-up">
+                    <a
+                      href="https://www.uninassau.edu.br/estrutura-fisica/aracaju"
+                      >Centro Universitário Maurício de Nassau - Aracajú</a
+                    >
                   </li>
-                  <li class="list-group-item">
-                    Universidade da Amazônia - Belém
+                  <li class="list-group-item" data-animation="fade-up">
+                    <a
+                      href="https://www.unama.br/estrutura-fisica/alcindo-cacela"
+                      >Universidade da Amazônia - Belém</a
+                    >
                   </li>
                 </ul>
                 <p>
@@ -345,7 +381,7 @@
                       <img
                         src="https://avatars.githubusercontent.com/u/7074473?v=4"
                         class="foto"
-                        alt="foto"
+                        alt="Foto de perfil do GitHub."
                         loading="lazy"
                       />
                     </div>
@@ -370,7 +406,7 @@
                       <img
                         src="https://avatars.githubusercontent.com/u/58793203?v=4"
                         class="foto"
-                        alt="foto"
+                        alt="Foto de perfil do GitHub."
                         loading="lazy"
                       />
                     </div>
@@ -395,7 +431,7 @@
                       <img
                         src="https://avatars.githubusercontent.com/u/108436724?v=4"
                         class="foto"
-                        alt="foto"
+                        alt="Foto de perfil do GitHub."
                         loading="lazy"
                       />
                     </div>
@@ -421,7 +457,7 @@
                       <img
                         src="https://avatars.githubusercontent.com/u/9597279?v=4"
                         class="foto"
-                        alt="foto"
+                        alt="Foto de perfil do GitHub."
                         loading="lazy"
                       />
                     </div>

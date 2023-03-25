@@ -2,21 +2,17 @@ body {
   background: radial-gradient(circle at center, #000000c3, #000000);
   color: white;
   overflow-x: hidden;
-
-  nav {
-    background-color: #0d0d0d5e;
-  }
 }
 body::-webkit-scrollbar {
   width: 8px;
 }
 body::-webkit-scrollbar-track {
-  background: $black; /* color of the tracking area */
+  background: $black;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $orange; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
+  background-color: $orange;
+  border-radius: 20px;
 }
 
 @media (max-width: 575.98px) {
@@ -29,28 +25,20 @@ main {
   padding-top: 4rem;
 }
 
-.academia,
-.funcionamento,
-.projetos {
-  text-align: justify;
-}
-
 section {
   margin: 4rem 0;
 }
 
+section .row .col-12 p {
+  text-align: justify !important;
+}
+
 .display-2 {
-  width: max-content;
-  color: #FE7144;
+  color: #fe7144;
   font-weight: 400;
 }
 
 @media (max-width: 262px) {
-  .display-2 {
-    width: min-content;
-  }
-}
-@media (min-width: 767px) and (max-width: 991.98px) {
   .display-2 {
     width: min-content;
   }
@@ -65,8 +53,3 @@ a {
     text-decoration: underline;
   }
 }
-
-
-
-
-
