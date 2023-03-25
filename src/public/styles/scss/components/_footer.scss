@@ -1,0 +1,10 @@
+footer {
+  background-color: $light;
+  overflow: hidden;
+  #dev {
+    width: fit-content;
+  }
+  a:hover {
+    color: rgb(110, 90, 90);
+  }
+}
