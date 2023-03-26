@@ -10,12 +10,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #0d0d0d; /* color of the tracking area */
+  background: #0d0d0d;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #f26444; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
+  background-color: #f26444;
+  border-radius: 20px;
 }
 
 @media (max-width: 575.98px) {
