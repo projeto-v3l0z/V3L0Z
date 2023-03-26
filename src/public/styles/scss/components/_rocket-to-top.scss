@@ -1,38 +1,13 @@
-.rocket-container {
-  position: relative;
-
-  .rocket {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: rocket-anim 2s ease-in-out infinite;
-    width: 10%;
-  }
-}
-
-@keyframes rocket-anim {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-50px);
-  }
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
 .rocket {
   transition: bottom 1s ease-in-out, transform 0.2s ease-in-out,
     opacity 0.5s ease-in-out;
+  animation: rocket-anim 10s infinite;
   position: fixed;
   bottom: 40px;
   right: 20px;
   cursor: pointer;
   opacity: 0;
   z-index: 9999;
-  transform: rotate(180deg);
 
   &.show {
     bottom: 20px;
@@ -42,5 +17,23 @@
   &.move {
     bottom: 400px;
     transform: rotate(0deg);
+  }
+}
+
+@keyframes rocket-anim {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-10px) translateY(0);
+  }
+  50% {
+    transform: translateX(0) translateY(-10px);
+  }
+  75% {
+    transform: translateX(10px) translateY(0);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
   }
 }
