@@ -1,5 +1,5 @@
 # Página Institucional - V3L0Z
-[Veja o site clicando aqui!](https://kevin-sarges.github.io/landing-page-veloz/)
+[Veja o site clicando aqui!](https://projeto-v3l0z.github.io/V3L0Z)
 
 ## Sobre o site
 
@@ -50,7 +50,7 @@ Agora a mensagem deve ser: _"Watching..."_. A partir daqui, todas as alteraçõe
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/fagnerpsantos)](https://github.com/leon-rdo)
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fagnerpsantos/)](https://www.linkedin.com/in/leonrdo-costa)
 
-Com a supervisão de Fabrício Araújo:
+Com a supervisão de Álvaro Câmara:
 
-[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/fagnerpsantos)](https://github.com/fabriciopa)
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fagnerpsantos/)](https://www.linkedin.com/in/araujopa)
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/fagnerpsantos)](https://github.com/fordx)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/fagnerpsantos/)](https://www.linkedin.com/in/álvaro-câmara-2006b7b8)
