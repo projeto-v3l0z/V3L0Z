@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - .:/app
+      - ./configs/dev/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./configs/dev/nginx/nginx.conf:/etc/nginx/nginx.conf
+    command: sh -c "/app/configs/certbot.sh && nginx -g 'daemon off;'"
