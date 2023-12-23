@@ -3,9 +3,11 @@ body {
   color: white;
   overflow-x: hidden;
 }
+
 body::-webkit-scrollbar {
   width: 8px;
 }
+
 body::-webkit-scrollbar-track {
   background: $black;
 }
@@ -51,5 +53,18 @@ a {
   &:hover {
     color: yellow;
     text-decoration: underline;
+  }
+}
+
+#devs {
+  background-color: $light;
+  overflow: hidden;
+
+  #dev {
+    width: fit-content;
+  }
+
+  a:hover {
+    color: rgb(110, 90, 90);
   }
 }

@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+    section {
+        padding: 0rem 3rem;
+    }
+</style>
+{% endblock extra_head %}
+
+{% block content %}
+<div class="container-fluid p-0">
+    <section id="about_us">
+        <div class="row justify-content-evenly align-items-center g-1">
+            <div id="border" class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-5">
+                <img class="img-fluid w-75" src="{% if settings.about_us_image %}{{ settings.about_us_image.url }}{% endif %}" alt="Logotipo da V3L0Z (VELOZ)" loading="lazy" />
+            </div>
+            <div class="col-12 col-lg-6 academia justify-content-center align-items-center">
+                <div class="w-100 fs-5">
+                    <h1 class="display-2 text-center text-lg-start">
+                        Academia V3L0Z
+                    </h1>
+
+                    {{ settings.about_us_text|linebreaks }}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projetos">
+        <div class="row d-sm-flex flex-md-row justify-content-evenly align-items-center g-4">
+            <div class="col-12 col-lg-6 fs-5 projetos justify-content-center align-items-center">
+                <div class="fs-5 projetos" data-animation="fade-up">
+                    <h1 class="display-2 text-center text-lg-start">PROJETOS</h1>
+
+                    {{ settings.projects_text|linebreaks }}
+
+                    <ul id="projetosFeitos" class="list-group">
+                        {% for project in projects %}
+                            <li class="list-group-item" data-animation="fade-up">
+                                {% if project.link %}
+                                    <a href="{{ project.link }}">{{ project.name }}</a>
+                                {% else %}
+                                    {{ project.name }}
+                                {% endif %}
+                            </li>
+                        {% empty %}
+                            <div class="alert alert-warning" role="alert">
+                                <h4 class="alert-heading"><strong>Ops!</strong></h4>
+                                <p>Parece que ainda não existem projetos cadastrados.</p>
+                                <hr />
+                                <p class="mb-0">Aguarde por atualizações!</p>
+                            </div>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-4" data-animation="flip">
+                <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators" data-animation="flip">
+                        {% for project in projects %}
+                            <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% for project in projects %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                {% if project.image %}
+                                    <img src="{{ project.image.url }}" class="d-block w-100" alt="{{ project.name }}" id="projeto{{ forloop.counter }}" loading="lazy" />
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                        <span class="visually-hidden">Anterior</span>
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                        <span class="visually-hidden">Seguinte</span>
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="funcionamento">
+        <div class="row d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center">
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-4">
+                <div class="video-container">
+                    {% if settings.promotional_video %}
+                    <video data-animation="flip" class="object-fit-contain"
+                        src="{{ settings.promotional_video.url }}" controls preload="none"
+                        poster="{{ settings.video_thumbnail.url }}">
+                        Seu navegador não suporta a tag <code>video</code>.
+                    </video>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="fs-5 funcionamento col-12 col-lg-6 fs-5 academia" data-animation="fade-up">
+                <h1 class="display-2 text-center text-lg-start">
+                    Como funciona?
+                </h1>
+                
+                {{ settings.how_works_text|linebreaks }}
+
+                <ul class="list-group mb-3 fs-6">
+                    {% for unity in units %}
+                    <li class="list-group-item" data-animation="fade-up">
+                        <a href="{{ unity.link }}">{{ unity.name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <p>
+                    Em cada unidade há um professor que é o coordenador do hub.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="devs" class="m-0 py-3">
+        <div class="row p-3" data-animation="fade-up">
+            <h2 class="h1 text-center text-dark">Devs</h2>
+        </div>
+        <div class="row justify-content-center align-items-center g-2">
+            {% for unity in units %}
+                {% if unity.devs.count != 0 %}
+                <div class="col-12">
+                    <h3 class="text-center text-dark my-3" data-animation="fade-up">{{ unity.name }}</h3>
+                    <ul class="list-group list-group-horizontal-sm d-flex justify-content-evenly list-inline text-center" id="#dev" data-animation="fade-up">
+                        {% for dev in unity.devs.all %}
+                        <li class="d-flex justify-content-center" data-animation="fade-up">
+                            <div class="p-2">
+                                <a href="{{ dev.get_main_link.link }}" class="d-flex flex-column justify-content-center align-content-center" target="_blank">
+                                    <div>
+                                        <img src="{{ dev.image.url }}" class="foto" alt="Foto de {{ dev.name }}" loading="lazy" />
+                                    </div>
+                                    <b>{{ dev.name }}</b>
+                                    <p>{{ dev.board }}</p>
+                                </a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <hr class="text-dark my-2">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        animateBorder();
+    });
+
+    function animateBorder() {
+        const border = document.getElementById('border');
+        border.classList.add('borda');
+    }
+
+    const carousel = document.querySelector("#projectsCarousel");
+    const listGroupItems = document.querySelectorAll("#projetosFeitos .list-group-item");
+
+    carousel.addEventListener("slide.bs.carousel", (event) => {
+        listGroupItems.forEach((item, index) => {
+            item.classList.toggle("active", index === event.to);
+        });
+    });
+</script>
+{% endblock scripts %}

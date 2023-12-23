@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Título -->
+    <title>V3L0Z</title>
+
+    <!--Favicon -->
+    <link rel="shortcut icon" href="{% static 'home/img/V3L0Z - Rocket (Orange).svg' %}" type="image/x-icon" />
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="content-language" content="pt-br" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#f26444" />
+
+    <meta name="keywords"
+        content="Ser Educacional, UNAMA, Uninassau, Devs, Desenvolvedores, V3L0Z, Veloz, estágio, TI, landing-page, academia, projeto, ZooUnama, foguete, Bolsas de estágio, Seleção de alunos, Experiência profissional, Academia de desenvolvedores, Desenvolvimento de software, Tecnologia da informação, Carreira de TI, Oportunidades de estágio, Programa de estágio, Edital de seleção, Ensino superior, Aprendizado prático, Mercado de trabalho em TI, Desenvolvimento web, Programação, Linguagens de programação, Projetos de software, Inovação, Tecnologia educacional, Empreendedorismo, Gestão de projetos, Qualificação profissional, Capacitação técnica, Mentoria, Networking, Soft skills, Hard skills, Educação a distância, Plataforma de ensino virtual, Certificação técnica, Estudantes de tecnologia, Trabalho remoto em TI, Cultura da inovação, Colaboração, Habilidades digitais, Transformação digital" />
+    <meta name="generator" content="Django 5.0" />
+    <meta name="rating" content="general" />
+    <meta name="robots" content="follow" />
+    <meta name="author" content="Kevin Sarges, Leonardo Costa e Matheus Macias" />
+    <meta name="description" content="Página oficial da academia V3L0Z" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ACADEMIA V3L0Z" />
+    <meta property="og:description" content="{{ settings.index_description }}" />
+    {% if settings.metatags_image %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ settings.metatags_image.url }}" />
+    {% endif %}
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}" />
+
+    <meta name="copyright" content="© 2023 Ser Educacional" />
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'home/styles/css/main.css' %}" />
+
+    <!-- Scripts -->
+    <script src="{% static 'home/scripts/bg-navbar.js' %}" defer></script>
+    <script src="{% static 'home/scripts/rocket-to-top.js' %}" defer></script>
+    <script src="{% static 'home/scripts/scroll-animation.js' %}" defer></script>
+    <!-- Extra head -->
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid mx-4 w-100">
+                <a class="navbar-brand me-4" href="{% url 'home:index' %}">
+                    <img src="{{ settings.navbar_brand.url }}" style="width: 160px; margin-right: 5px" alt="{{ settings.navbar_brand_alt }}" />
+                </a>
+                <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <img src="{% static 'home/img/menu.svg' %}" width="30px" alt="Ícones" />
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'home:index' %}#top" aria-current="page">Início<span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home:index' %}#about_us">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home:index' %}#projetos">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home:index' %}#funcionamento">Como funciona?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home:index' %}#devs">Devs</a>
+                        </li>
+                        {% if user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 justify-content-center align-items-center d-flex mb-3 mt-5">
+                <img data-animation="flip" src="{{ settings.footer_brand.url }}" style="width: 200px" alt='Palavra "Veloz" escrita nas cores roxo (no corte diagonal inferior) e laranja (no corte diagonal superior), porém com fonte futurística e no lugar da letra "E", está o número 3, no lugar da letra "O" está o número 0.' loading="lazy" />
+            </div>
+        </div>
+        <img src="{% static 'home/img/Rocket.svg' %}" style="width: 70px" alt="Foguete" class="rocket" id="scroll-to-top" />
+    </footer>
+    <audio></audio>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      const audio = new Audio("{% static 'home/audios/Rocket-Launch.mp3' %}");
+      audio.volume = 0.1;
+    </script>
+    {% block scripts %}{% endblock scripts %}
+</body>
+
+</html>

@@ -54,6 +54,17 @@ a:hover {
   text-decoration: underline;
 }
 
+#devs {
+  background-color: #f2ddd0;
+  overflow: hidden;
+}
+#devs #dev {
+  width: fit-content;
+}
+#devs a:hover {
+  color: rgb(110, 90, 90);
+}
+
 [data-animation] {
   opacity: 0;
   transition: 0.7s;
@@ -73,12 +84,12 @@ a:hover {
 }
 
 @media (min-width: 991px) {
-  #academia {
+  #border {
     border-left: solid white 0;
     transition: border-left 1s;
   }
-  #academia.borda {
-    border-left: solid #f26444 6px;
+  .borda {
+    border-left: solid #f26444 6px !important;
   }
 }
 .foto {
@@ -174,13 +185,8 @@ footer {
   background-color: #f2ddd0;
   overflow: hidden;
 }
-footer #dev {
-  width: fit-content;
-}
-footer a:hover {
-  color: rgb(110, 90, 90);
-}
 
 .navbar {
   background-color: rgba(13, 13, 13, 0.8705882353);
+  transition: all 0.5s ease;
 }

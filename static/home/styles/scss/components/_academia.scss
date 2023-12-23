@@ -1,12 +1,14 @@
 @media (min-width: 991px) {
-  #academia {
+  #border {
     border-left: solid white 0;
     transition: border-left 1s;
   }
-  #academia.borda {
-    border-left: solid $orange 6px;
+
+  .borda {
+    border-left: solid $orange 6px!important;
   }
 }
+
 .foto {
   width: 100px;
   height: 100px;
