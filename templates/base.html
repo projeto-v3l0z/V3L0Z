@@ -3,34 +3,29 @@
 {% load static %}
 <head>
     <!-- Título -->
-    <title>V3L0Z</title>
+    <title>ACADEMIA V3L0Z</title>
 
     <!--Favicon -->
     <link rel="shortcut icon" href="{% static 'home/img/V3L0Z - Rocket (Orange).svg' %}" type="image/x-icon" />
 
-    <!-- Meta Tags -->
+    <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-language" content="pt-br" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#f26444" />
-
-    <meta name="keywords"
-        content="Ser Educacional, UNAMA, Uninassau, Devs, Desenvolvedores, V3L0Z, Veloz, estágio, TI, landing-page, academia, projeto, ZooUnama, foguete, Bolsas de estágio, Seleção de alunos, Experiência profissional, Academia de desenvolvedores, Desenvolvimento de software, Tecnologia da informação, Carreira de TI, Oportunidades de estágio, Programa de estágio, Edital de seleção, Ensino superior, Aprendizado prático, Mercado de trabalho em TI, Desenvolvimento web, Programação, Linguagens de programação, Projetos de software, Inovação, Tecnologia educacional, Empreendedorismo, Gestão de projetos, Qualificação profissional, Capacitação técnica, Mentoria, Networking, Soft skills, Hard skills, Educação a distância, Plataforma de ensino virtual, Certificação técnica, Estudantes de tecnologia, Trabalho remoto em TI, Cultura da inovação, Colaboração, Habilidades digitais, Transformação digital" />
-    <meta name="generator" content="Django 5.0" />
+    <meta name="author" content="Equipe V3L0Z da UNAMA Alcindo Cacela">
+    <meta name="generator" content="Django 5.0"/>
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.placename" content="Brasil" />
     <meta name="rating" content="general" />
     <meta name="robots" content="follow" />
-    <meta name="author" content="Kevin Sarges, Leonardo Costa e Matheus Macias" />
-    <meta name="description" content="Página oficial da academia V3L0Z" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="ACADEMIA V3L0Z" />
-    <meta property="og:description" content="{{ settings.index_description }}" />
-    {% if settings.metatags_image %}
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ settings.metatags_image.url }}" />
-    {% endif %}
-    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}" />
-
     <meta name="copyright" content="© 2023 Ser Educacional" />
+
+    <!-- Dublin Core Meta Tags -->
+    <meta name="DC.creator" content="Equipe V3L0Z da UNAMA Alcindo Cacela">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="pt-BR">
+    <meta name="DC.rights" content="© 2023 Ser Educacional">
 
     <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">

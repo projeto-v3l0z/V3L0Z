@@ -2,12 +2,38 @@
 {% load static %}
 
 {% block extra_head %}
+<!-- Page Specific Meta Tags -->
+<meta name="description" content="Página oficial da academia V3L0Z" />    
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ACADEMIA V3L0Z" />
+<meta property="og:description" content="{{ settings.index_description }}" />
+{% if settings.metatags_image %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ settings.metatags_image.url }}" />
+{% endif %}
+<meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}" />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ACADEMIA V3L0Z">
+<meta name="twitter:description" content="{{ settings.index_description }}">
+{% if settings.metatags_image %}
+<meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ settings.metatags_image.url }}">
+{% endif %}
+
+<!-- SEO Meta Tags -->
+<link rel = "canonical" href="{{ request.scheme }}://{{ request.get_host }}" /> 
+<meta name="keywords" content="academia, desenvolvimento de software, programação, desenvolvimento web, linguagens de programação, inovação, tecnologia educacional, empreendedorismo, gestão de projetos, qualificação profissional, capacitação técnica, mentoria, networking, soft skills, hard skills, educação a distância, plataforma de ensino virtual, certificação técnica, estudantes de tecnologia, cultura da inovação, colaboração, habilidades digitais, transformação digital, Ser Educacional">
+
+<!-- More styles -->
 <style>
     section {
         padding: 0rem 3rem;
     }
 </style>
-{% endblock extra_head %}
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid p-0">
