@@ -13,9 +13,10 @@
 <div class="container-fluid p-0">
     <section id="about_us">
         <div class="row justify-content-evenly align-items-center g-1">
-            <div id="border" class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-5">
+            <figure id="border" class="col-12 col-lg-6 d-flex justify-content-center align-items-center mb-5">
                 <img class="img-fluid w-75" src="{% if settings.about_us_image %}{{ settings.about_us_image.url }}{% endif %}" alt="Logotipo da V3L0Z (VELOZ)" loading="lazy" />
-            </div>
+                <figcaption class="d-none">Logotipo da V3L0Z (VELOZ)</figcaption>
+            </figure>
             <div class="col-12 col-lg-6 academia justify-content-center align-items-center">
                 <div class="w-100 fs-5">
                     <h1 class="display-2 text-center text-lg-start">
@@ -32,7 +33,7 @@
         <div class="row d-sm-flex flex-md-row justify-content-evenly align-items-center g-4">
             <div class="col-12 col-lg-6 fs-5 projetos justify-content-center align-items-center">
                 <div class="fs-5 projetos" data-animation="fade-up">
-                    <h1 class="display-2 text-center text-lg-start">PROJETOS</h1>
+                    <h2 class="h1 display-2 text-center text-lg-start">PROJETOS</h2>
 
                     {{ settings.projects_text|linebreaks }}
 
@@ -43,6 +44,15 @@
                                     <a href="{{ project.link }}">{{ project.name }}</a>
                                 {% else %}
                                     {{ project.name }}
+                                {% endif %}
+                                {% if project.description %}
+                                    <details class="text-end" style="margin-top: -1.9rem;">
+                                        <summary>Ver descrição</summary>
+                                        <p class="fs-6 mb-1">{{ project.description }}</p>
+                                        <small>
+                                            <a href="{{ project.unit.link }}" target="_blank">{{ project.unit.name }}</a>
+                                        </small>
+                                    </details>
                                 {% endif %}
                             </li>
                         {% empty %}
@@ -67,7 +77,10 @@
                         {% for project in projects %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                                 {% if project.image %}
-                                    <img src="{{ project.image.url }}" class="d-block w-100" alt="{{ project.name }}" id="projeto{{ forloop.counter }}" loading="lazy" />
+                                <figure>
+                                    <img src="{{ project.image.url }}" class="d-block w-100" alt="Ilustração do projeto {{ project.name }}" id="projeto{{ forloop.counter }}" loading="lazy" />
+                                    <figcaption class="d-none">Ilustração do projeto {{ project.name }}</figcaption>
+                                </figure>
                                 {% endif %}
                             </div>
                         {% endfor %}
@@ -99,9 +112,9 @@
             </div>
 
             <div class="fs-5 funcionamento col-12 col-lg-6 fs-5 academia" data-animation="fade-up">
-                <h1 class="display-2 text-center text-lg-start">
+                <h2 class="h1 display-2 text-center text-lg-start">
                     Como funciona?
-                </h1>
+                </h2>
                 
                 {{ settings.how_works_text|linebreaks }}
 
@@ -112,9 +125,7 @@
                     </li>
                     {% endfor %}
                 </ul>
-                <p>
-                    Em cada unidade há um professor que é o coordenador do hub.
-                </p>
+                <p>Em cada unidade há um professor que é o coordenador do hub.</p>
             </div>
         </div>
     </section>
@@ -132,11 +143,13 @@
                         <li class="d-flex justify-content-center" data-animation="fade-up">
                             <div class="p-2">
                                 <a href="{{ dev.get_main_link.link }}" class="d-flex flex-column justify-content-center align-content-center" target="_blank">
-                                    <div>
+                                    <figure>
                                         <img src="{{ dev.image.url }}" class="foto" alt="Foto de {{ dev.name }}" loading="lazy" />
-                                    </div>
-                                    <b>{{ dev.name }}</b>
-                                    <p>{{ dev.board }}</p>
+                                        <figcaption>
+                                            <h4 class="fs-6 fw-bold mt-2 mb-1">{{ dev.name }}</h4>
+                                            <p class="m-0">{{ dev.board }}</p>
+                                        </figcaption>
+                                    </figure>
                                 </a>
                             </div>
                         </li>

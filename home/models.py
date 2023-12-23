@@ -46,6 +46,7 @@ class Project(models.Model):
     description = models.TextField('Descrição do Projeto', blank=True, null=True)
     image = models.ImageField('Imagem do Projeto', upload_to='home/images', blank=True, null=True)
     link = models.URLField('Link do Projeto', blank=True, null=True)
+    unit = models.ForeignKey('home.Unit', verbose_name='Unidade', on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         verbose_name = "Projeto"
