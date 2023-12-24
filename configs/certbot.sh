@@ -11,7 +11,7 @@ if [ ! -f "$fullchain_file" ] || [ ! -f "$privkey_file" ]; then
     apk add --no-cache certbot certbot-nginx
 
     email="hesdrasviana@gmail.com"
-    domains="v3l0z.com.br,www.v3l0z.com.br"
+    domains="v3l0z.com.br,www.v3l0z.com.br,zoounama.v3l0z.com.br,www.zoounama.v3l0z.com.br,campusconnect.v3l0z.com.br,www.campusconnect.v3l0z.com.br"
 
     certbot --nginx --non-interactive --agree-tos -m "$email" --domains "$domains"
 else
