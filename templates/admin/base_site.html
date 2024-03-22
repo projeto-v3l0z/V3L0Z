@@ -1,0 +1,78 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300&display=swap"
+    rel="stylesheet" />
+<style>
+    html[data-theme="light"],
+    :root {
+        --primary: #FE7144;
+        --secondary: #FE7144;
+        --accent: #FFF;
+        --header-color: #911133;
+        --breadcrumbs-bg: #FF8D6B;
+        --link-hover-color: #FE9C66;
+        --body-quiet-color: #FF5B2A;
+        --button-hover-bg: #d14200 ;
+        --default-button-bg: #318D71;
+        --default-button-hover-bg: #00D37F;
+    }
+
+    html[data-theme="dark"] {
+        --primary: #FE7144;
+        --body-quiet-color: #FE9C66;
+        --breadcrumbs-bg: #00000039;
+        --link-hover-color: #FE9C66;
+    }
+
+    #site-name {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.5rem;
+    }
+
+    #toggle-nav-sidebar {
+        background: var(--breadcrumbs-bg);
+        color: var(--breadcrumbs-fg);
+    }
+
+    #content h1 {
+        color: var(--header-color);
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    #content h2 {
+        color: var(--header-link-color);
+    }
+
+    
+    .form-row div .flex-container, .actions {
+        display: flex;
+        padding: 0 0.5rem;
+    }
+
+    #changelist .actions {
+        padding: 1rem!important;
+        width: auto!important;
+    }
+
+    .paginator {
+        width: auto!important;
+    }
+
+    #changelist {
+        background: none;
+        background-color: #00000000;
+    }
+</style>
+
+{% endblock %}
+
+#fa7556
+#bc6150
+#ba6244
+#bb5238
+
+#FF82A3
+#660028
+#7F233B
+#FF5B2A
