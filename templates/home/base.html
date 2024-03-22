@@ -44,7 +44,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
             <div class="container-fluid mx-4 w-100">
                 <a class="navbar-brand me-4" href="{% url 'home:index' %}">
-                    <img src="{{ settings.navbar_brand.url }}" style="width: 160px; margin-right: 5px" alt="{{ settings.navbar_brand_alt }}" />
+                    <img src="{{ settings.navbar_brand.url }}" style="width: 60px; margin-right: 5px" alt="{{ settings.navbar_brand_alt }}" />
                 </a>
                 <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
@@ -70,7 +70,7 @@
                         </li>
                         {% if user.is_staff %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                            <a class="nav-link" href="{% url 'admin:index' %}">Administração</a>
                         </li>
                         {% endif %}
                     </ul>

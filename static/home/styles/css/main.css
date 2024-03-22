@@ -93,10 +93,24 @@ a:hover {
   }
 }
 .foto {
-  width: 100px;
-  height: 100px;
+  max-width: 10vh;
+  max-height: 10vh;
   border-radius: 20px;
   border: #0d0d0d 1.6px solid;
+}
+@media (max-height : 668px) {
+  .foto {
+    width: 7vh;
+    height: 7vh;
+ 
+  }
+}
+@media (max-height : 776px) {
+  .foto {
+    width: 8vh;
+    height: 8vh;
+ 
+  }
 }
 
 .carousel-item img {
