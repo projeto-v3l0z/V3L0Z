@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from django.core.exceptions import ValidationError
-
+from django.contrib.auth.models import AbstractUser
 
 def validate_file_size(value):
     filesize = value.size
@@ -56,12 +56,23 @@ class Project(models.Model):
         return self.name
 
 
-class Dev(models.Model):
+class User(AbstractUser):
 
-    name = models.CharField('Nome do Dev', max_length=100)
-    board = models.CharField('Cargo do Dev', max_length=100, blank=True, null=True)
-    description = models.TextField('Descrição do Dev', blank=True, null=True)
-    image = models.ImageField('Imagem do Dev', upload_to='home/images/devs', blank=True, null=True)
+    full_name = models.CharField('Nome do Dev', max_length=100)
+    preferred_name = models.CharField('Cargo do Dev', max_length=100, blank=True, null=True)
+    birthdate = models.TextField('Descrição do Dev', blank=True, null=True)
+    picture = models.ImageField('Imagem do Dev', upload_to='home/images/devs', blank=True, null=True)
+    gender = models.CharField('Gênero do Dev', max_length=100, blank=True, null=True)
+
+    phone = models.CharField('Telefone do Dev', max_length=100, blank=True, null=True)
+    linkedin = models.URLField('Linkedin do Dev', blank=True, null=True)
+    github = models.URLField('Github do Dev', blank=True, null=True)
+
+    role = models.CharField('Cargo do Dev', max_length=100, blank=True, null=True)
+    unit = models.ForeignKey('home.Unit', verbose_name='Unidade', on_delete=models.CASCADE, blank=True, null=True)
+    boss = models.ForeignKey('home.User', verbose_name='Chefe', on_delete=models.CASCADE, blank=True, null=True)
+    admission_date = models.DateField('Data de Admissão', blank=True, null=True)
+    resignation_date = models.DateField('Data de Saída', blank=True, null=True)
     
     def get_main_link(self):
         return self.socialmedia_set.filter(is_main=True).first()
@@ -74,74 +85,6 @@ class Dev(models.Model):
         return self.name
 
 
-class SocialMedia(models.Model):
-    
-    ICONS = (
-        ('alexa', 'Alexa'),
-        ('behance', 'Behance'),
-        ('discord', 'Discord'),
-        ('dribbble', 'Dribbble'),
-        ('facebook', 'Facebook'),
-        ('github', 'Github'),
-        ('gitlab', 'Gitlab'),
-        ('google', 'Google'),
-        ('instagram', 'Instagram'),
-        ('line', 'Line'),
-        ('linkedin', 'Linkedin'),
-        ('mastodon', 'Mastodon'),
-        ('medium', 'Medium'),
-        ('messenger', 'Messenger'),
-        ('microsoft-teams', 'Microsoft Teams'),
-        ('opencollective', 'Opencollective'),
-        ('paypal', 'Paypal'),
-        ('pinterest', 'Pinterest'),
-        ('quora', 'Quora'),
-        ('reddit', 'Reddit'),
-        ('signal', 'Signal'),
-        ('sina-weibo', 'Sina Weibo'),
-        ('skype', 'Skype'),
-        ('slack', 'Slack'),
-        ('snapchat', 'Snapchat'),
-        ('sourceforge', 'Sourceforge'),
-        ('spotify', 'Spotify'),
-        ('stack-overflow', 'Stack Overflow'),
-        ('strava', 'Strava'),
-        ('substack', 'Substack'),
-        ('telegram', 'Telegram'),
-        ('tencent-qq', 'Tencent QQ'),
-        ('threads', 'Threads'),
-        ('threads-fill', 'Threads Fill'),
-        ('tiktok', 'Tiktok'),
-        ('twitch', 'Twitch'),
-        ('twitter', 'Twitter'),
-        ('twitter-x', 'Twitter X'),
-        ('vimeo', 'Vimeo'),
-        ('wechat', 'Wechat'),
-        ('whatsapp', 'Whatsapp'),
-        ('wordpress', 'Wordpress'),
-        ('yelp', 'Yelp'),
-        ('youtube', 'Youtube'),
-        ('link', 'Outra')
-    )
-
-    social_network = models.CharField('Rede Social', max_length=100, choices=ICONS)
-    link = models.URLField('Link da Rede Social')
-    dev = models.ForeignKey('home.Dev', verbose_name='Desenvolvedor', on_delete=models.CASCADE, help_text='Deixe em branco para adicionar rede social como da própria Academia V3L0Z.', blank=True, null=True)
-    is_main = models.BooleanField('Principal', default=False)
-    
-    def save(self, *args, **kwargs):
-        if self.is_main:
-            SocialMedia.objects.filter(dev=self.dev, is_main=True).update(is_main=False)
-        super(SocialMedia, self).save(*args, **kwargs)
-        
-    class Meta:
-        verbose_name = "Rede Social"
-        verbose_name_plural = "Redes Sociais"
-
-    def __str__(self):
-        return self.social_network
-
-
 class Unit(models.Model):
     
     name = models.CharField('Nome da Unidade', max_length=100)
@@ -149,7 +92,7 @@ class Unit(models.Model):
     description = models.TextField('Descrição da Unidade', blank=True, null=True)
     image = models.ImageField('Imagem da Unidade', upload_to='home/images/units', blank=True, null=True)
     link = models.URLField('Link da Unidade', blank=True, null=True)
-    devs = models.ManyToManyField('home.Dev', verbose_name='Desenvolvedores', blank=True)
+    
 
     class Meta:
         verbose_name = "Unidade"
