@@ -24,3 +24,4 @@ class UnitAdmin(admin.ModelAdmin):
     list_display = ['name', 'local', 'description', 'link']
     search_fields = ['name', 'local', 'description']
     list_filter = ['name', 'local']
+    exclude = ('devs',)

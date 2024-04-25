@@ -10,7 +10,16 @@ class UserAdmin(UserAdmin):
         ('Work info', {'fields': ('role', 'boss', 'unit')}),
         ('Contact info', {'fields': ('email', 'phone', 'linkedin', 'github')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined', 'admission_date', 'resignation_date')}),
+        ('Important dates', {'fields': ('admission_date', 'resignation_date')}),
     )
 
-    list_display = ('username', 'full_name', 'preferred_name', 'email', 'is_staff')
+    list_display = ('username', 'full_name', 'preferred_name', 'email', 'is_active')
+
+    actions = ['alter_active_status']
+
+    def alter_active_status(self, request, queryset):
+        for user in queryset:
+            user.is_active = not user.is_active
+            user.save()
+
+    alter_active_status.short_description = 'Alterar status de atividade'

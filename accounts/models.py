@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from home.models import Unit
 
 class User(AbstractUser):
     gender_choices = [
@@ -31,3 +32,8 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+    def save(self, *args, **kwargs):
+            super().save(*args, **kwargs)
+            if self.unit:
+                self.unit.devs.add(self)

@@ -63,6 +63,7 @@ class Unit(models.Model):
     description = models.TextField('Descrição da Unidade', blank=True, null=True)
     image = models.ImageField('Imagem da Unidade', upload_to='home/images/units', blank=True, null=True)
     link = models.URLField('Link da Unidade', blank=True, null=True)
+    devs = models.ManyToManyField('accounts.User', verbose_name='Desenvolvedores', related_name='units', blank=True)
 
     class Meta:
         verbose_name = "Unidade"
