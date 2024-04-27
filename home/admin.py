@@ -1,18 +1,11 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import Setting, Project, Unit, User
+from .models import Setting, Project, Dev, SocialMedia, Unit
 
 
 admin.site.site_header = 'Administração da V3L0Z'
 admin.site.site_title = 'V3L0Z'
 admin.site.index_title = 'Administração'
 
-
-@admin.register(User)
-class UserAdmin(UserAdmin):
-    list_display = ['username', 'full_name', 'email', 'is_staff']
-    search_fields = ['username', 'full_name', 'email']
-    list_filter = ['is_staff']
 
 @admin.register(Setting)
 class SettingAdmin(admin.ModelAdmin):
@@ -26,6 +19,19 @@ class ProjectAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     list_filter = ['name']
 
+
+@admin.register(Dev)
+class DevAdmin(admin.ModelAdmin):
+    list_display = ['name', 'description']
+    search_fields = ['name', 'description']
+    list_filter = ['name']
+
+
+@admin.register(SocialMedia)
+class SocialMediaAdmin(admin.ModelAdmin):
+    list_display = ['social_network', 'link', 'dev']
+    search_fields = ['social_network', 'link']
+    list_filter = ['social_network', 'dev']
 
 
 @admin.register(Unit)
