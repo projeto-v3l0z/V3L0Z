@@ -172,19 +172,28 @@
                         {% if dev.is_active %}
                         <li class="d-flex justify-content-center" data-animation="fade-up">
                             <div class="p-2">
-                                <a {% if dev.get_main_link.link %} href= "{{ dev.get_main_link.link }}" {% else %} href="#" {%endif%} class="d-flex flex-column justify-content-center align-content-center" target="_blank">
+                               <div class="d-flex flex-column justify-content-center align-content-center text-dark"> 
                                     <figure>
                                         {% if dev.picture %}
-                                        <img src="{{ dev.picture.url }}" class="foto" alt="Foto de {{ dev.full_name }}" loading="lazy" />
+                                        <img src="{{ dev.picture.url }}" class="foto" alt="Foto de {{ dev.preferred_name }}" loading="lazy" />
                                         {% else %}
-                                        <!-- Coloque aqui uma imagem padrão ou ícone de usuário -->
-                                        <img src="{% static 'path/para/imagem_padrao.png' %}" class="foto" alt="Foto de {{ dev.full_name }}" loading="lazy" />
-                                        {% endif %}                                        <figcaption>
-                                            <h4 class="fs-6 fw-bold mt-2 mb-1">{{ dev.full_name }}</h4>
+                                        <img src="{% static 'home/img/7074473.png' %}" class="foto" alt="Foto de {{ dev.full_name }}" loading="lazy" />
+                                        {% endif %}                                        
+                                        <figcaption>
+                                            <h4 class="fs-6 fw-bold mt-2 mb-1">{{ dev.preferred_name }}</h4>
                                             <p class="m-0">{{ dev.role }}</p>
+                                            <div class="row">
+                                                {% if dev.github %}
+                                                <div class="col"><a href="{{dev.github}}" target="_blank"><img src="{% static 'home/img/github.svg' %}" alt=""></a></div>
+                                                {% endif %}
+
+                                                {% if dev.linkedin %}
+                                                <div class="col"><a href="{{dev.linkedin}}"><img src="{% static 'home/img/github.svg' %}" alt=""></a></div>
+                                                {% endif %}
+                                            </div>
                                         </figcaption>
                                     </figure>
-                                </a>
+                                </div>
                             </div>
                         </li>
                         {% endif %}
